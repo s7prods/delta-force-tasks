@@ -1,0 +1,20 @@
+:root {
+    --bg-main: #1a1a1a;
+    --bg-secondary: #2a2a2a;
+    --text-main: #ffffff;
+    --text-sub: #e5e5e5;
+    --accent-green: #00d4aa;
+    --accent-warning: #ff8800;
+    --line-thin: rgba(255, 255, 255, 0.06);
+    --blur-amt: 18px;
+    --transition-fast: 0.25s;
+    --sidebar-width: 220px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-main);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+}

@@ -1,5 +1,10 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
+import './styles/main.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+
+// 全局配置
+app.config.globalProperties.$ui = window.ui
+
+app.mount('#app')
