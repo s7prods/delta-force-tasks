@@ -279,6 +279,7 @@ watch(showVideo, (newVal) => {
   padding: 40px 50px;
   color: var(--text-main);
   text-shadow: 0 0 4px #000;
+  overflow: auto;
 }
 
 @media (max-width: 768px) {
