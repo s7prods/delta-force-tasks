@@ -48,6 +48,9 @@ import {
   getActivityComponent
 } from './activities'
 
+// 获取路由实例
+const route = useRoute()
+
 // 状态管理
 const currentActivityId = computed(() => route.params.id || 'event1')
 const currentHeroImage = ref('')

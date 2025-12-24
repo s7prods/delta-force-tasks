@@ -1,7 +1,6 @@
 <template>
     <div class="event1-container">
         <h2>突击行动 - 领取奖励测试</h2>
-
         <!-- 动态插入的图片显示区域 -->
         <div class="image-gallery">
             <h3>奖励预览图片</h3>
@@ -18,7 +17,6 @@
                 已选择: {{ selectedImage.alt }}
             </p>
         </div>
-
         <!-- 奖励统计 -->
         <div class="reward-stats">
             <div class="stat-item">
@@ -30,6 +28,15 @@
                 <span class="stat-value">{{ rewardImages.length }}</span>
             </div>
         </div>
+        <el-dialog v-model="showClaimDialog" title="领取奖励确认" width="350px" :close-on-click-modal="false">
+            <div v-if="selectedImage">
+                确认领取 <b style="color:#00d4aa">{{ selectedImage.alt }}</b> 吗？
+            </div>
+            <template #footer>
+                <el-button @click="showClaimDialog = false">取消</el-button>
+                <el-button type="primary" @click="confirmClaim">确认领取</el-button>
+            </template>
+        </el-dialog>
     </div>
 </template>
 
@@ -38,27 +45,33 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useUI } from '../composables/useUI'
 import { ElDialog, ElButton } from 'element-plus'
 
+// 导入奖励图片 (使用占位符)
+const goldWeaponImg = 'https://picsum.photos/200/200?random=1'
+const epicCharacterImg = 'https://picsum.photos/200/200?random=2'
+const rareHangerImg = 'https://picsum.photos/200/200?random=3'
+const expCardImg = 'https://picsum.photos/200/200?random=4'
+
 const ui = useUI()
 
 // 奖励图片数据
 const rewardImages = ref([
     {
-        src: require('@/assets/event1/gold_weapon.png'),
+        src: goldWeaponImg,
         alt: '黄金武器皮肤',
         rarity: 'legendary'
     },
     {
-        src: require('@/assets/event1/epic_character.png'),
+        src: epicCharacterImg,
         alt: '稀有角色皮肤',
         rarity: 'epic'
     },
     {
-        src: require('@/assets/event1/rare_hanger.png'),
+        src: rareHangerImg,
         alt: '精美挂件',
         rarity: 'rare'
     },
     {
-        src: require('@/assets/event1/exp_card.png'),
+        src: expCardImg,
         alt: '经验加成卡',
         rarity: 'common'
     }
@@ -120,48 +133,6 @@ onUnmounted(() => {
     selectedImage.value = null
 })
 </script>
-
-<template>
-    <div class="event1-container">
-        <h2>突击行动 - 领取奖励测试</h2>
-        <!-- 动态插入的图片显示区域 -->
-        <div class="image-gallery">
-            <h3>奖励预览图片</h3>
-            <div class="image-grid">
-                <img v-for="(image, index) in rewardImages"
-                     :key="index"
-                     :src="image.src"
-                     :alt="image.alt"
-                     @click="selectImage(image)"
-                     :class="{ selected: selectedImage?.src === image.src }"
-                     class="reward-image" />
-            </div>
-            <p v-if="selectedImage" class="selected-info">
-                已选择: {{ selectedImage.alt }}
-            </p>
-        </div>
-        <!-- 奖励统计 -->
-        <div class="reward-stats">
-            <div class="stat-item">
-                <span class="stat-label">已领取奖励:</span>
-                <span class="stat-value">{{ claimedRewards.length }}</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-label">总奖励数:</span>
-                <span class="stat-value">{{ rewardImages.length }}</span>
-            </div>
-        </div>
-        <el-dialog v-model="showClaimDialog" title="领取奖励确认" width="350px" :close-on-click-modal="false">
-            <div v-if="selectedImage">
-                确认领取 <b style="color:#00d4aa">{{ selectedImage.alt }}</b> 吗？
-            </div>
-            <template #footer>
-                <el-button @click="showClaimDialog = false">取消</el-button>
-                <el-button type="primary" @click="confirmClaim">确认领取</el-button>
-            </template>
-        </el-dialog>
-    </div>
-</template>
 
 <style scoped>
 .event1-container {
