@@ -43,22 +43,22 @@ const ui = useUI()
 // 奖励图片数据
 const rewardImages = ref([
     {
-        src: 'https://picsum.photos/200/150?random=101',
+        src: require('@/assets/event1/gold_weapon.png'),
         alt: '黄金武器皮肤',
         rarity: 'legendary'
     },
     {
-        src: 'https://picsum.photos/200/150?random=102',
+        src: require('@/assets/event1/epic_character.png'),
         alt: '稀有角色皮肤',
         rarity: 'epic'
     },
     {
-        src: 'https://picsum.photos/200/150?random=103',
+        src: require('@/assets/event1/rare_hanger.png'),
         alt: '精美挂件',
         rarity: 'rare'
     },
     {
-        src: 'https://picsum.photos/200/150?random=104',
+        src: require('@/assets/event1/exp_card.png'),
         alt: '经验加成卡',
         rarity: 'common'
     }

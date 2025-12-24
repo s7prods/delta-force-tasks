@@ -64,6 +64,9 @@ const currentTrackIndex = ref(0)
 const isPlaying = ref(false)
 const heroVideo = ref(null)
 
+// 视频播放状态
+const isVideoPlaying = ref(false)
+
 // 计算属性
 const currentActivityConfig = computed(() => {
   return getActivityConfig(currentActivityId.value)
@@ -102,13 +105,28 @@ const ui = {
     if (heroVideo.value) {
       heroVideo.value.play()
     }
+    // 视频播放时暂停音乐
+    if (isPlaying.value) {
+      isPlaying.value = false
+      if (musicPlayer.value && typeof musicPlayer.value.updatePlayer === 'function') {
+        musicPlayer.value.updatePlayer()
+      }
+    }
+    isVideoPlaying.value = true
   },
-
   stopVideo: () => {
     showVideo.value = false
     if (heroVideo.value) {
       heroVideo.value.pause()
     }
+    // 视频停止后恢复音乐播放
+    if (!isPlaying.value && playlist.value.length > 0) {
+      isPlaying.value = true
+      if (musicPlayer.value && typeof musicPlayer.value.updatePlayer === 'function') {
+        musicPlayer.value.updatePlayer()
+      }
+    }
+    isVideoPlaying.value = false
   },
 
   showTextPanel: (html, duration = 5000) => {
