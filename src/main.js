@@ -1,9 +1,9 @@
 import { createApp } from 'vue'
-import App from './App.vue'
+import Frame from './Frame.vue'
 import './styles/main.css'
 import router from './router'
 
-const app = createApp(App)
+const app = createApp(Frame)
 
 // 使用路由器
 app.use(router)

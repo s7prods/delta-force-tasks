@@ -1,8 +1,4 @@
-// 导入所有活动组件
-import Event1 from './Event1.vue'
-import Event2 from './Event2.vue'
-import Event3 from './Event3.vue'
-import { markRaw } from 'vue'
+import { markRaw, defineAsyncComponent } from 'vue'
 
 // 活动配置映射表
 export const activities = {
@@ -11,22 +7,27 @@ export const activities = {
         name: '突击行动',
         title: '突击行动 - 精英模式',
         desc: '参与高强度突击任务，赢取限定皮肤与武器。',
-        hero: 'https://picsum.photos/1920/1080?random=1',
-        preview: 'https://picsum.photos/300/200?random=1',
+        hero: '/assets/covers/battle1.jpg',
+        preview: '/assets/covers/1724062863299.jpg',
         musicStrategy: 'force',
         music: [
             {
-                title: 'public/assets/audio/Ave Mujica-Imprisoned XII instrumental.mp3',
-                audio: '/public/assets/audio/Ave Mujica-Imprisoned XII instrumental.mp3',
-                cover: 'https://picsum.photos/200/200?random=10'
+                title: 'Ave Mujica-Crucifix X instrumental',
+                audio: '/assets/audio/Ave Mujica-Crucifix X instrumental.mp3',
+                cover: '/assets/cover/Ave Mujica-Crucifix X.jpg'
             },
             {
-                title: 'Sample Music 2',
-                audio: 'https://www.soundjay.com/misc/sounds/bell-ringing-04.wav',
-                cover: 'https://picsum.photos/200/200?random=11'
-            }
+                title: 'Ave Mujica-Imprisoned XII instrumental',
+                audio: '/assets/audio/Ave Mujica-Imprisoned XII instrumental.mp3',
+                cover: '/assets/cover/Ave Mujica-Imprisoned XII.jpg'
+            },  
+            {
+                title: 'Ave Mujica-天球 (そら) のMúsica instrumental',
+                audio: '/assets/audio/Ave Mujica-天球 (そら) のMúsica instrumental.mp3',
+                cover: '/assets/cover/Ave Mujica-天球 (そら) のMúsica.jpg'
+            },
         ],
-        component: markRaw(Event1)
+        component: markRaw(defineAsyncComponent(() => import('./Event1.vue')))
     },
     event2: {
         id: 'event2',
@@ -36,7 +37,7 @@ export const activities = {
         hero: 'https://picsum.photos/1920/1080?random=2',
         preview: 'https://picsum.photos/300/200?random=2',
         musicStrategy: 'keep',
-        component: markRaw(Event2)
+        component: markRaw(defineAsyncComponent(() => import('./Event2.vue')))
     },
     event3: {
         id: 'event3',
@@ -46,7 +47,7 @@ export const activities = {
         hero: 'https://picsum.photos/1920/1080?random=3',
         preview: 'https://picsum.photos/300/200?random=3',
         musicStrategy: 'stop',
-        component: markRaw(Event3)
+        component: markRaw(defineAsyncComponent(() => import('./Event3.vue')))
     },
 }
 

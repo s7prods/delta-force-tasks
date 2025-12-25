@@ -131,10 +131,7 @@ function createWindow() {
     autoHideMenuBar: true,
     show: false, // 先隐藏，等加载完成再显示
     webPreferences: {
-      nodeIntegration: false, // 禁用 Node.js 集成
-      contextIsolation: true, // 启用上下文隔离
-      webSecurity: false, // 允许加载本地资源
-      // 不设置 preload
+      autoplayPolicy: 'no-user-gesture-required'
     }
   })
 
@@ -177,7 +174,7 @@ function createWindow() {
     // 生产环境：启动本地服务器服务打包文件
     startStaticServer()
       .then(() => {
-        mainWindow.loadURL(`http://localhost:${PORT}`)
+        mainWindow.loadURL(`http://127.0.0.1:${PORT}`)
         mainWindow.show()
       })
       .catch(err => {

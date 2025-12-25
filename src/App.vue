@@ -51,7 +51,7 @@ import {
 const route = useRoute()
 
 // 状态管理
-const currentActivityId = computed(() => route.params.id || 'event1')
+const currentActivityId = computed(() => route.params.id)
 const currentHeroImage = ref('')
 const currentVideo = ref('')
 const showVideo = ref(false)
@@ -110,9 +110,6 @@ const ui = {
     // 视频播放时暂停音乐
     if (isPlaying.value) {
       isPlaying.value = false
-      if (musicPlayer.value && typeof musicPlayer.value.updatePlayer === 'function') {
-        musicPlayer.value.updatePlayer()
-      }
     }
     isVideoPlaying.value = true
   },
@@ -121,13 +118,7 @@ const ui = {
     if (heroVideo.value) {
       heroVideo.value.pause()
     }
-    // 视频停止后恢复音乐播放
-    if (!isPlaying.value && playlist.value.length > 0) {
-      isPlaying.value = true
-      if (musicPlayer.value && typeof musicPlayer.value.updatePlayer === 'function') {
-        musicPlayer.value.updatePlayer()
-      }
-    }
+    // 视频停止后不恢复音乐播放
     isVideoPlaying.value = false
   },
 
@@ -300,7 +291,6 @@ watch(showVideo, (newVal) => {
   position: relative;
   padding: 40px 50px;
   color: var(--text-main);
-  text-shadow: 0 0 4px #000;
   overflow: auto;
 }
 

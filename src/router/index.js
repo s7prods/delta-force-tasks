@@ -3,10 +3,19 @@ import App from '../App.vue'
 
 const routes = [
   {
-    path: '/:id?',
+    path: '/:id',
     name: 'Event',
     component: App,
     props: true
+  },
+  {
+    path: '/',
+    redirect: '/event1'
+  },
+  {
+    // 404 路由
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/NotFound.vue')
   }
 ]
 

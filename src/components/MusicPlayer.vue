@@ -29,7 +29,8 @@
 </template>
 
 <script setup>
-import { ref, computed, reactive } from 'vue'
+import { ref, computed, reactive, watch, nextTick } from 'vue'
+import { ElMessage } from 'element-plus'
 
 const props = defineProps({
     playlist: {
@@ -66,38 +67,103 @@ const selectTrack = (index) => {
 
 const currentState = reactive({})
 
-const play = function() {
-    audioElement.value.play().catch(() => {
-        // autoplay failed, require user action
-        window.addEventListener('click', function onFirstClick() {
-            audioElement.value.play()
-        }, { once: true })
-    })
+const play = function () {
+    if (audioElement.value) {
+        audioElement.value.play().catch(() => {
+            // autoplay failed, require user action
+            if (!currentState.shownWarning) {
+                currentState.shownWarning = true
+                ElMessage.warning('自动播放被浏览器阻止，请点击任意位置手动开始播放')
+            }
+            emit('play-pause') // 重置isPlaying为false
+            window.addEventListener('click', function onFirstClick() {
+                if (audioElement.value) {
+                    audioElement.value.play().then(() => {
+                        emit('play-pause') // 播放成功后重置isPlaying为true
+                    }).catch(() => {
+                        ElMessage.error('播放失败，请检查音频文件')
+                        //此时isPlaying已经为false不需要重置
+                    })
+                }
+            }, { once: true })
+        })
+    }
 }
+
+const pause = function () {
+    if (audioElement.value) {
+        audioElement.value.pause()
+    }
+}
+
+// 监听isPlaying属性变化，确保播放器状态与isPlaying一致
+watch(() => props.isPlaying, (newValue, oldValue) => {
+    if (oldValue !== undefined && audioElement.value) {
+        if (newValue) {
+            play()
+        } else {
+            pause()
+        }
+    }
+})
+
+// 监听当前曲目变化
+watch(() => props.currentTrackIndex, () => {
+    if (audioElement.value && currentTrack.value?.audio) {
+        audioElement.value.src = currentTrack.value.audio
+        if (props.isPlaying) {
+            play()
+        }
+    }
+})
 
 // 暴露方法给父组件
 defineExpose({
-  updatePlayer() {
-    // 这个方法现在只是用于调试，不再尝试修改props
-    const newState = {
-      isPlaying: props.isPlaying,
-      currentTrack: currentTrack.value?.title,
-      trackIndex: props.currentTrackIndex,
-      url: currentTrack.value?.url || '',
+    async updatePlayer() {
+        await nextTick()
+        const newState = {
+            isPlaying: props.isPlaying,
+            currentTrack: currentTrack.value?.title,
+            trackIndex: props.currentTrackIndex,
+            url: currentTrack.value?.audio || '',
+        }
+        console.debug('[MusicPlayer] updatePlayer', 'newUrl=', newState.url, 'isPlaying=', newState.isPlaying, 'currentUrl=', currentState.url)
+        
+        if (currentState.url !== newState.url) {
+            if (audioElement.value) {
+                audioElement.value.src = newState.url
+                if (newState.isPlaying) {
+                    play()
+                }
+            }
+            else nextTick(() => {
+                if (audioElement.value) {
+                    audioElement.value.src = newState.url
+                }
+                else {
+                    console.error('Failed to set audio source')
+                    emit('play-pause') // 无法设置音频源时重置isPlaying为false
+                }
+                if (newState.isPlaying) {
+                    play()
+                }
+            })
+        } else {
+            // 如果URL相同但播放状态不一致，确保状态同步
+            if (audioElement.value) {
+                if (newState.isPlaying && audioElement.value.paused) {
+                    play()
+                } else if (!newState.isPlaying && !audioElement.value.paused) {
+                    pause()
+                }
+            }
+        }
+        currentState.isPlaying = newState.isPlaying
+        currentState.currentTrack = newState.currentTrack
+        currentState.trackIndex = newState.trackIndex
+        currentState.url = newState.url
+
     }
-    if (currentState.isPlaying && !newState.isPlaying) {
-      audioElement.value.pause()
-    } else if (!currentState.isPlaying && newState.isPlaying) {
-        play()
-    }
-    if (currentState.url !== newState.url) {
-      audioElement.value.src = newState.url
-      if (newState.isPlaying) {
-        play()
-      }
-    }
-    Object.assign(currentState, newState)
-  }
 })
 </script>
 
