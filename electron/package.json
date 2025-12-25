@@ -1,0 +1,18 @@
+{
+  "name": "@xrh114514/dfui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "build": "node copy-dist.js && electron-builder --dir --x64 --config.directories.output=app-dist"
+  },
+  "keywords": [],
+  "author": "",
+  "packageManager": "pnpm@10.26.2",
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12"
+  }
+}
