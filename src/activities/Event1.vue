@@ -43,7 +43,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 import { useUI } from '../composables/useUI'
-import { ElDialog, ElButton } from 'element-plus'
+// 移除显式导入的ElementPlus组件
 
 // 导入奖励图片 (使用占位符)
 const goldWeaponImg = 'https://picsum.photos/200/200?random=1'

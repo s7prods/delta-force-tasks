@@ -39,7 +39,6 @@ import { useRouter, useRoute } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
 import MusicPlayer from './components/MusicPlayer.vue'
 import ClaimButton from './components/ClaimButton.vue'
-import { ElNotification } from 'element-plus'
 
 // 导入活动配置和组件
 import {
