@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "only-allow pnpm && vite",
     "build": "vite build",
-    "preview": "electron ./electron/",
+    "preview": "vite preview",
     "preinstall": "only-allow pnpm"
   },
   "dependencies": {

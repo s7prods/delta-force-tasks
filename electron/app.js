@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
+const isDev = require('electron-is-dev')
 
 // 创建一个窗口
 function createWindow () {
@@ -11,7 +12,7 @@ function createWindow () {
 
   // 在开发环境下，我们加载Vite开发服务器的URL
   // 在生产环境下，我们加载打包后的文件
-  if (process.env.NODE_ENV !== 'production') {
+  if (isDev) {
     win.loadURL('http://localhost:5173') // Vite默认的端口是5173，如果你更改了端口，请相应调整
     // 打开开发者工具
     win.webContents.openDevTools()
