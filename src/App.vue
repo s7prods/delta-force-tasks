@@ -208,11 +208,13 @@ const loadActivity = async (id) => {
 }
 
 // 处理奖励领取
-const handleClaimReward = (id) => {
+const handleClaimReward = async (id) => {
   console.log(`领取奖励: ${id}`)
 
   if (window.app && typeof window.app.claimReward === 'function') {
-    window.app.claimReward(id)
+    if (await window.app.claimReward(id) === false) {
+      return
+    }
   }
 
   // 安全地更新按钮状态

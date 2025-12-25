@@ -108,10 +108,15 @@ const claimReward = (rewardId) => {
 const onClaimBtnClick = (rewardId) => {
     if (!selectedImage.value) {
         ui.showTextPanel('请先选择要领取的奖励！', 3000)
-        return
+        return false
     }
     pendingRewardId.value = rewardId
     showClaimDialog.value = true
+    return new Promise((resolve) => {
+        watch(showClaimDialog, (newVal) => {
+            resolve(!newVal)
+        })
+    })
 }
 
 // 确认领取
