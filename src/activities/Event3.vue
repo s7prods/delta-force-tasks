@@ -89,22 +89,22 @@ const videoPlayer = ref(null)
 // 视频数据
 const videoList = ref([
     {
-        title: '特别活动宣传片',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4',
-        thumbnail: 'https://picsum.photos/200/150?random=201',
+        title: '我的浮木似了',
+        src: 'https://upos-sz-mirrorcosov.bilivideo.com/upgcxcode/66/51/34837825166/34837825166_qe1-1-192.mp4?e=ig8euxZM2rNcNbRz7WdVhwdlhWhBhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&uipk=5&trid=2e01a2a8d986476eba655624be9be88T&mid=3546763107502921&deadline=1766670730&nbs=1&platform=html5&og=hw&oi=2163336239&gen=playurlv3&os=cosovbv&upsig=affa3240c172283de9b85a8c92492471&uparams=e,uipk,trid,mid,deadline,nbs,platform,og,oi,gen,os&bvc=vod&nettype=0&bw=1105903&agrr=0&buvid=&build=0&dl=0&f=T_0_0&mobi_app=&orderid=0,1',
+        thumbnail: 'https://i2.hdslb.com/bfs/archive/84104d9a086288fdef9265293006f66efc73912c.jpg@672w_378h_1c.avif',
         description: '精彩的活动宣传视频，展示活动亮点',
         duration: '00:10'
     },
     {
-        title: '游戏玩法介绍',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_640x360_1mb.mp4',
-        thumbnail: 'https://picsum.photos/200/150?random=202',
+        title: 'meme',
+        src: 'https://upos-sz-mirrorcosov.bilivideo.com/upgcxcode/04/19/34644561904/34644561904-1-192.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&nbs=1&oi=2163336239&gen=playurlv3&os=cosovbv&og=hw&uipk=5&platform=html5&trid=576f1ed14ea24489ab66adc4fc64931T&mid=3546763107502921&deadline=1766677489&upsig=bee5fd1e9f86bd226def00399a8f0ec9&uparams=e,nbs,oi,gen,os,og,uipk,platform,trid,mid,deadline&bvc=vod&nettype=0&bw=656383&agrr=0&buvid=&build=0&dl=0&f=T_0_0&mobi_app=&orderid=0,1',
+        thumbnail: 'https://i0.hdslb.com/bfs/archive/d1afc647acd559eb30a55e80dd1d8931518b04b9.jpg@672w_378h_1c.avif',
         description: '详细介绍游戏玩法和技巧',
         duration: '00:08'
     },
     {
         title: '奖励系统说明',
-        src: 'https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4',
+        src: 'https://upos-sz-mirrorcosov.bilivideo.com/upgcxcode/59/15/33429521559/33429521559-1-192.mp4?e=ig8euxZM2rNcNbRVhwdVhwdlhWdVhwdVhoNvNC8BqJIzNbfq9rVEuxTEnE8L5F6VnEsSTx0vkX8fqJeYTj_lta53NCM=&mid=3546763107502921&deadline=1766677685&nbs=1&platform=html5&gen=playurlv3&os=cosovbv&og=hw&uipk=5&oi=2163336239&trid=d2bbabd5971a4ba09234870c09e604eT&upsig=33dbebb31dcc2120e4b5aca75a7027cd&uparams=e,mid,deadline,nbs,platform,gen,os,og,uipk,oi,trid&bvc=vod&nettype=0&bw=666894&build=0&dl=0&f=T_0_0&mobi_app=&agrr=0&buvid=&orderid=0,1',
         thumbnail: 'https://picsum.photos/200/150?random=203',
         description: '了解各种奖励和成就系统',
         duration: '00:12'
@@ -252,6 +252,7 @@ onUnmounted(() => {
 .main-video {
     width: 100%;
     height: auto;
+    max-height: 80vh;
     display: block;
     background: #000;
 }

@@ -23,11 +23,13 @@
                 {{ track.title }}
             </div>
         </div>
+
+        <audio ref="audioElement" v-show="false"></audio>
     </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, reactive } from 'vue'
 
 const props = defineProps({
     playlist: {
@@ -47,6 +49,7 @@ const props = defineProps({
 const emit = defineEmits(['play-pause', 'next-track', 'select-track'])
 
 const showMenu = ref(false)
+const audioElement = ref(null)
 
 const currentTrack = computed(() => {
     return props.playlist[props.currentTrackIndex] || null
@@ -61,15 +64,39 @@ const selectTrack = (index) => {
     showMenu.value = false
 }
 
+const currentState = reactive({})
+
+const play = function() {
+    audioElement.value.play().catch(() => {
+        // autoplay failed, require user action
+        window.addEventListener('click', function onFirstClick() {
+            audioElement.value.play()
+        }, { once: true })
+    })
+}
+
 // 暴露方法给父组件
 defineExpose({
   updatePlayer() {
     // 这个方法现在只是用于调试，不再尝试修改props
-    console.log('播放器状态已同步:', {
+    const newState = {
       isPlaying: props.isPlaying,
       currentTrack: currentTrack.value?.title,
-      trackIndex: props.currentTrackIndex
-    })
+      trackIndex: props.currentTrackIndex,
+      url: currentTrack.value?.url || '',
+    }
+    if (currentState.isPlaying && !newState.isPlaying) {
+      audioElement.value.pause()
+    } else if (!currentState.isPlaying && newState.isPlaying) {
+        play()
+    }
+    if (currentState.url !== newState.url) {
+      audioElement.value.src = newState.url
+      if (newState.isPlaying) {
+        play()
+      }
+    }
+    Object.assign(currentState, newState)
   }
 })
 </script>
