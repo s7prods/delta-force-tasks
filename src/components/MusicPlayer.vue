@@ -79,9 +79,9 @@ const play = function () {
             window.addEventListener('click', function onFirstClick() {
                 if (audioElement.value) {
                     audioElement.value.play().then(() => {
-                        emit('play-pause') // 播放成功后重置isPlaying为true
-                    }).catch(() => {
-                        ElMessage.error('播放失败，请检查音频文件')
+                        // emit('play-pause') // 播放成功后重置isPlaying为true
+                    }).catch((e) => {
+                        ElMessage.error('播放失败，请检查音频文件: '+e)
                         //此时isPlaying已经为false不需要重置
                     })
                 }
