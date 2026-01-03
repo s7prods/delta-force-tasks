@@ -56,7 +56,6 @@
                     <div class="video-details">
                         <h4>{{ video.title }}</h4>
                         <p>{{ video.description }}</p>
-                        <span class="duration">{{ video.duration }}</span>
                     </div>
                 </div>
             </div>
@@ -92,92 +91,79 @@ const videoList = ref([
         title: 'GIRLS BAND CRY 第1集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 01.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第一集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第一集'
     },
     {
         title: 'GIRLS BAND CRY 第2集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 02.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第二集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第二集'
     },
     {
         title: 'GIRLS BAND CRY 第3集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 03.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第三集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第三集'
     },
     {
         title: 'GIRLS BAND CRY 第4集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 04.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第四集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第四集'
     },
     {
         title: 'GIRLS BAND CRY 第5集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 05.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第五集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第五集'
     },
     {
         title: 'GIRLS BAND CRY 第6集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 06.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第六集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第六集'
     },
     {
         title: 'GIRLS BAND CRY 第7集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 07.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第七集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第七集'
     },
     {
         title: 'GIRLS BAND CRY 第8集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 08.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第八集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第八集'
     },
     {
         title: 'GIRLS BAND CRY 第9集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 09.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第九集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第九集'
     },
     {
         title: 'GIRLS BAND CRY 第10集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 10.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第十集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第十集'
     },
     {
         title: 'GIRLS BAND CRY 第11集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 11.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第十一集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第十一集'
     },
     {
         title: 'GIRLS BAND CRY 第12集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 12.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第十二集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第十二集'
     },
     {
         title: 'GIRLS BAND CRY 第13集',
         src: '/assets/1/GIRLS BAND CRY/GIRLS BAND CRY 13.mp4',
         thumbnail: '/assets/1/gbc.jpg',
-        description: 'GIRLS BAND CRY第十三集',
-        duration: '24:00'
+        description: 'GIRLS BAND CRY第十三集'
     }
 ])
 

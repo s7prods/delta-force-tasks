@@ -10,7 +10,7 @@ const routes = [
   },
   {
     path: '/',
-    redirect: '/event1'
+    redirect: '/event0'
   },
   {
     // 404 路由

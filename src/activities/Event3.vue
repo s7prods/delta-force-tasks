@@ -56,7 +56,6 @@
                     <div class="video-details">
                         <h4>{{ video.title }}</h4>
                         <p>{{ video.description }}</p>
-                        <span class="duration">{{ video.duration }}</span>
                     </div>
                 </div>
             </div>
@@ -92,85 +91,73 @@ const videoList = ref([
         title: '孤独摇滚 第1集',
         src: '/assets/1/孤独摇滚/孤独摇滚01.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第一集',
-        duration: '24:00'
+        description: '孤独摇滚第一集'
     },
     {
         title: '孤独摇滚 第2集',
         src: '/assets/1/孤独摇滚/孤独摇滚02.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第二集',
-        duration: '24:00'
+        description: '孤独摇滚第二集'
     },
     {
         title: '孤独摇滚 第3集',
         src: '/assets/1/孤独摇滚/孤独摇滚03.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第三集',
-        duration: '24:00'
+        description: '孤独摇滚第三集'
     },
     {
         title: '孤独摇滚 第4集',
         src: '/assets/1/孤独摇滚/孤独摇滚04.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第四集',
-        duration: '24:00'
+        description: '孤独摇滚第四集'
     },
     {
         title: '孤独摇滚 第5集',
         src: '/assets/1/孤独摇滚/孤独摇滚05.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第五集',
-        duration: '24:00'
+        description: '孤独摇滚第五集'
     },
     {
         title: '孤独摇滚 第6集',
         src: '/assets/1/孤独摇滚/孤独摇滚06.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第六集',
-        duration: '24:00'
+        description: '孤独摇滚第六集'
     },
     {
         title: '孤独摇滚 第7集',
         src: '/assets/1/孤独摇滚/孤独摇滚07.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第七集',
-        duration: '24:00'
+        description: '孤独摇滚第七集'
     },
     {
         title: '孤独摇滚 第8集',
         src: '/assets/1/孤独摇滚/孤独摇滚08.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第八集',
-        duration: '24:00'
+        description: '孤独摇滚第八集'
     },
     {
         title: '孤独摇滚 第9集',
         src: '/assets/1/孤独摇滚/孤独摇滚09.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第九集',
-        duration: '24:00'
+        description: '孤独摇滚第九集'
     },
     {
         title: '孤独摇滚 第10集',
         src: '/assets/1/孤独摇滚/孤独摇滚10.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第十集',
-        duration: '24:00'
+        description: '孤独摇滚第十集'
     },
     {
         title: '孤独摇滚 第11集',
         src: '/assets/1/孤独摇滚/孤独摇滚11.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第十一集',
-        duration: '24:00'
+        description: '孤独摇滚第十一集'
     },
     {
         title: '孤独摇滚 第12集',
         src: '/assets/1/孤独摇滚/孤独摇滚12.mp4',
         thumbnail: '/assets/1/孤独摇滚.jpg',
-        description: '孤独摇滚第十二集',
-        duration: '24:00'
+        description: '孤独摇滚第十二集'
     }
 ])
 

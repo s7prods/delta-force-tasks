@@ -56,7 +56,6 @@
                     <div class="video-details">
                         <h4>{{ video.title }}</h4>
                         <p>{{ video.description }}</p>
-                        <span class="duration">{{ video.duration }}</span>
                     </div>
                 </div>
             </div>
@@ -92,92 +91,79 @@ const videoList = ref([
         title: 'BanG Dream! Its MyGO!!!!! 第1集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 01.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第一集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第一集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第2集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 02.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第二集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第二集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第3集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 03.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第三集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第三集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第4集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 04.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第四集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第四集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第5集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 05.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第五集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第五集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第6集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 06.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第六集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第六集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第7集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 07.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第七集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第七集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第8集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 08.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第八集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第八集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第9集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 09.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第九集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第九集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第10集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 10.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第十集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第十集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第11集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 11.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第十一集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第十一集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第12集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 12.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第十二集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第十二集'
     },
     {
         title: 'BanG Dream! Its MyGO!!!!! 第13集',
         src: '/assets/1/It\'s myGO/BanG Dream! Its MyGO!!!!! 13.mp4',
         thumbnail: '/assets/1/mygo.jpg',
-        description: 'BanG Dream! Its MyGO!!!!!第十三集',
-        duration: '24:00'
+        description: 'BanG Dream! Its MyGO!!!!!第十三集'
     }
 ])
 

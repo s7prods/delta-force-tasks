@@ -56,7 +56,6 @@
                     <div class="video-details">
                         <h4>{{ video.title }}</h4>
                         <p>{{ video.description }}</p>
-                        <span class="duration">{{ video.duration }}</span>
                     </div>
                 </div>
             </div>
@@ -92,92 +91,79 @@ const videoList = ref([
         title: 'BanG Dream! Ave Mujica 第1集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 01.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第一集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第一集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第2集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 02.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第二集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第二集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第3集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 03.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第三集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第三集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第4集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 04.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第四集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第四集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第5集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 05.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第五集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第五集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第6集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 06.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第六集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第六集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第7集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 07.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第七集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第七集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第8集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 08.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第八集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第八集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第9集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 09.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第九集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第九集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第10集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 10.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第十集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第十集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第11集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 11.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第十一集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第十一集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第12集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 12.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第十二集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第十二集'
     },
     {
         title: 'BanG Dream! Ave Mujica 第13集',
         src: '/assets/1/Ave Mujica/BanG Dream! Ave Mujica 13.mp4',
         thumbnail: '/assets/1/mujica.jpg',
-        description: 'BanG Dream! Ave Mujica第十三集',
-        duration: '24:00'
+        description: 'BanG Dream! Ave Mujica第十三集'
     }
 ])
 

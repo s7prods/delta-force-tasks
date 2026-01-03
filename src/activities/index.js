@@ -2,302 +2,142 @@ import { markRaw, defineAsyncComponent } from 'vue'
 
 // 全局音乐播放列表 - 包含所有活动的音乐
 export const globalMusicPlaylist = [
-    // Event1 - 突击行动 (Ave Mujica)
-    {
-        title: 'Ave Mujica-Crucifix X',
-        audio: '/assets/1/music/Ave Mujica-Crucifix X.mp3',
-        cover: '/assets/1/music/Ave Mujica-Crucifix X.jpg',
-        artist: 'Ave Mujica',
-        event: '突击行动'
-    },
-    {
-        title: 'Ave Mujica-Imprisoned XII',
-        audio: '/assets/1/music/Ave Mujica-Imprisoned XII.mp3',
-        cover: '/assets/1/music/Ave Mujica-Imprisoned XII.jpg',
-        artist: 'Ave Mujica',
-        event: '突击行动'
-    },
-    {
-        title: 'Ave Mujica-天球 (そら) のMúsica',
-        audio: '/assets/1/music/Ave Mujica-天球 (そら) のMúsica.mp3',
-        cover: '/assets/1/music/Ave Mujica-天球 (そら) のMúsica.jpg',
-        artist: 'Ave Mujica',
-        event: '突击行动'
-    },
-
-    // Event3 - 孤独摇滚
-    {
-        title: 'あのバンド',
-        audio: '/assets/1/music/結束バンド-あのバンド (TV Version).mp3',
-        cover: '/assets/1/music/結束バンド-あのバンド.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-    {
-        title: 'ギターと孤独と蒼い惑星',
-        audio: '/assets/1/music/結束バンド-ギターと孤独と蒼い惑星 (Anime Ver.).mp3',
-        cover: '/assets/1/music/結束バンド-ギターと孤独と蒼い惑星.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-    {
-        title: '星座になれたら',
-        audio: '/assets/1/music/結束バンド-星座になれたら.mp3',
-        cover: '/assets/1/music/結束バンド-星座になれたら.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-    {
-        title: '忘れてやらない',
-        audio: '/assets/1/music/結束バンド-忘れてやらない.mp3',
-        cover: '/assets/1/music/結束バンド-忘れてやらない.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-    {
-        title: 'Distortion‼',
-        audio: '/assets/1/music/結束バンド-Distortion‼ (Inst.).mp3',
-        cover: '/assets/1/music/結束バンド-Distortion‼.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-    {
-        title: 'なにが悪い',
-        audio: '/assets/1/music/結束バンド-なにが悪い (Inst.).mp3',
-        cover: '/assets/1/music/結束バンド-なにが悪い.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-    {
-        title: 'カラカラ',
-        audio: '/assets/1/music/結束バンド-カラカラ (Inst.).mp3',
-        cover: '/assets/1/music/結束バンド-カラカラ.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-    {
-        title: '結束バンド-翻转',
-        audio: '/assets/1/music/結束バンド-結束バンド-翻转 (結束バンド remix).mp3',
-        cover: '/assets/1/music/結束バンド-結束バンド-翻转.jpg',
-        artist: '結束バンド',
-        event: '孤独摇滚'
-    },
-
-    // Event4 - GIRLS BAND CRY
-    {
-        title: 'ダレモ',
-        audio: '/assets/1/music/トゲナシトゲアリ-ダレモ.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-ダレモ.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: 'サヨナラサヨナラサヨナラ',
-        audio: '/assets/1/music/トゲナシトゲアリ-サヨナラサヨナラサヨナラ.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-サヨナラサヨナラサヨナラ.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: 'arrow',
-        audio: '/assets/1/music/トゲナシトゲアリ-arrow.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-arrow.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: 'もう何もいらない未来',
-        audio: '/assets/1/music/トゲナシトゲアリ-もう何もいらない未来.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-もう何もいらない未来.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: '空白とカタルシス',
-        audio: '/assets/1/music/トゲナシトゲアリ-空白とカタルシス.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-空白とカタルシス.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: '心象的フラクタル',
-        audio: '/assets/1/music/トゲナシトゲアリ-心象的フラクタル (beni-shouga).mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-心象的フラクタル.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: '爆ぜて咲く',
-        audio: '/assets/1/music/トゲナシトゲアリ-爆ぜて咲く.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-爆ぜて咲く.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: '理想的パラドクスとは',
-        audio: '/assets/1/music/トゲナシトゲアリ-理想的パラドクスとは.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-理想的パラドクスとは.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: '誰にもなれない私だから',
-        audio: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-    {
-        title: '雑踏、僕らの街',
-        audio: '/assets/1/music/トゲナシトゲアリ-雑踏、僕らの街.mp3',
-        cover: '/assets/1/music/トゲナシトゲアリ-雑踏、僕らの街.jpg',
-        artist: 'トゲナシトゲアリ',
-        event: 'GIRLS BAND CRY'
-    },
-
-    // Event5 - MyGO!!!!!
-    {
-        title: '「僕は...」',
-        audio: '/assets/1/music/MyGO!!!!!-「僕は...」 (I am…).mp3',
-        cover: '/assets/1/music/MyGO!!!!!-「僕は...」.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: 'エガクミライ',
-        audio: '/assets/1/music/MyGO!!!!!-エガクミライ.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-エガクミライ.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: '壱雫空',
-        audio: '/assets/1/music/MyGO!!!!!-壱雫空.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-壱雫空.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: '影色舞',
-        audio: '/assets/1/music/MyGO!!!!!-影色舞.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-影色舞.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: '迷星叫',
-        audio: '/assets/1/music/MyGO!!!!!-迷星叫.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-迷星叫.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: '春日影',
-        audio: '/assets/1/music/MyGO!!!!!-春日影 (MyGO!!!!! ver.).mp3',
-        cover: '/assets/1/music/MyGO!!!!!-春日影.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: '詩超絆',
-        audio: '/assets/1/music/MyGO!!!!!-詩超絆.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-詩超絆.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: 'Henceforth',
-        audio: '/assets/1/music/MyGO!!!!!-Henceforth.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-Henceforth.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: '名無声',
-        audio: '/assets/1/music/MyGO!!!!!-名無声.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-名無声.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-    {
-        title: '回層浮',
-        audio: '/assets/1/music/MyGO!!!!!-回層浮.mp3',
-        cover: '/assets/1/music/MyGO!!!!!-回層浮.jpg',
-        artist: 'MyGO!!!!!',
-        event: 'MyGO!!!!!'
-    },
-
-    // Event6 - Ave Mujica
-    {
-        title: 'Ave Mujica',
-        audio: '/assets/1/music/Ave Mujica-Ave Mujica.mp3',
-        cover: '/assets/1/music/Ave Mujica-Ave Mujica.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'Crucifix X',
-        audio: '/assets/1/music/Ave Mujica-Crucifix X.mp3',
-        cover: '/assets/1/music/Ave Mujica-Crucifix X.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'Imprisoned XII',
-        audio: '/assets/1/music/Ave Mujica-Imprisoned XII.mp3',
-        cover: '/assets/1/music/Ave Mujica-Imprisoned XII.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: '天球 (そら) のMúsica',
-        audio: '/assets/1/music/Ave Mujica-天球 (そら) のMúsica.mp3',
-        cover: '/assets/1/music/Ave Mujica-天球 (そら) のMúsica.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'DIVINE',
-        audio: '/assets/1/music/Ave Mujica-DIVINE.mp3',
-        cover: '/assets/1/music/Ave Mujica-DIVINE.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'KiLLKiSS',
-        audio: '/assets/1/music/Ave Mujica-KiLLKiSS.mp3',
-        cover: '/assets/1/music/Ave Mujica-KiLLKiSS.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'Georgette Me, Georgette You',
-        audio: '/assets/1/music/Ave Mujica-Georgette Me, Georgette You.mp3',
-        cover: '/assets/1/music/Ave Mujica-Georgette Me, Georgette You.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'Ether',
-        audio: '/assets/1/music/Ave Mujica-Ether.mp3',
-        cover: '/assets/1/music/Ave Mujica-Ether.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'Choir \'S\' Choir',
-        audio: '/assets/1/music/Ave Mujica-Choir \'S\' Choir.mp3',
-        cover: '/assets/1/music/Ave Mujica-Choir \'S\' Choir.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    },
-    {
-        title: 'Angles',
-        audio: '/assets/1/music/Ave Mujica-Angles.mp3',
-        cover: '/assets/1/music/Ave Mujica-Angles.jpg',
-        artist: 'Ave Mujica',
-        event: 'Ave Mujica'
-    }
+{ title: 'MSR-in your blue eyes', audio: '/assets/1/music/Ave Mujica&塞壬唱片-MSR-in your blue eyes.mp3', cover: '/assets/1/music/Ave Mujica&塞壬唱片-MSR-in your blue eyes.jpg', artist: 'Ave Mujica&塞壬唱片', event: '其他' },
+{ title: "'S、' The Way (TV Size)", audio: '/assets/1/music/Ave Mujica-\'S、\' The Way (TV Size).mp3', cover: '/assets/1/music/Ave Mujica-\'S、\' The Way (TV Size).jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Angles', audio: '/assets/1/music/Ave Mujica-Angles.mp3', cover: '/assets/1/music/Ave Mujica-Angles.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Ave Mujica', audio: '/assets/1/music/Ave Mujica-Ave Mujica.mp3', cover: '/assets/1/music/Ave Mujica-Ave Mujica.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Choir \'S\' Choir', audio: '/assets/1/music/Ave Mujica-Choir \'S\' Choir.mp3', cover: '/assets/1/music/Ave Mujica-Choir \'S\' Choir.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Crucifix X', audio: '/assets/1/music/Ave Mujica-Crucifix X.mp3', cover: '/assets/1/music/Ave Mujica-Crucifix X.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'DIVINE', audio: '/assets/1/music/Ave Mujica-DIVINE.mp3', cover: '/assets/1/music/Ave Mujica-DIVINE.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Ether', audio: '/assets/1/music/Ave Mujica-Ether.mp3', cover: '/assets/1/music/Ave Mujica-Ether.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Georgette Me, Georgette You (TV Version)', audio: '/assets/1/music/Ave Mujica-Georgette Me, Georgette You (TV Version).mp3', cover: '/assets/1/music/Ave Mujica-Georgette Me, Georgette You (TV Version).jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Georgette Me, Georgette You', audio: '/assets/1/music/Ave Mujica-Georgette Me, Georgette You.mp3', cover: '/assets/1/music/Ave Mujica-Georgette Me, Georgette You.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Imprisoned XII', audio: '/assets/1/music/Ave Mujica-Imprisoned XII.mp3', cover: '/assets/1/music/Ave Mujica-Imprisoned XII.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'KiLLKiSS', audio: '/assets/1/music/Ave Mujica-KiLLKiSS.mp3', cover: '/assets/1/music/Ave Mujica-KiLLKiSS.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'KINGS (Cover)', audio: '/assets/1/music/Ave Mujica-KINGS (Cover).mp3', cover: '/assets/1/music/Ave Mujica-KINGS (Cover).jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Mas？uerade Rhapsody Re？uest', audio: '/assets/1/music/Ave Mujica-Mas？uerade Rhapsody Re？uest.mp3', cover: '/assets/1/music/Ave Mujica-Mas？uerade Rhapsody Re？uest.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Mujica结尾', audio: '/assets/1/music/Ave Mujica-Mujica结尾.mp3', cover: '/assets/1/music/Ave Mujica-Mujica结尾.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Sophie', audio: '/assets/1/music/Ave Mujica-Sophie.mp3', cover: '/assets/1/music/Ave Mujica-Sophie.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Symbol I ： △', audio: '/assets/1/music/Ave Mujica-Symbol I ： △.mp3', cover: '/assets/1/music/Ave Mujica-Symbol I ： △.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Symbol II ： Air', audio: '/assets/1/music/Ave Mujica-Symbol II ： Air.mp3', cover: '/assets/1/music/Ave Mujica-Symbol II ： Air.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Symbol III ： ▽', audio: '/assets/1/music/Ave Mujica-Symbol III ： ▽.mp3', cover: '/assets/1/music/Ave Mujica-Symbol III ： ▽.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Symbol IV ： Earth', audio: '/assets/1/music/Ave Mujica-Symbol IV ： Earth.mp3', cover: '/assets/1/music/Ave Mujica-Symbol IV ： Earth.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '‘S、’ The Way', audio: '/assets/1/music/Ave Mujica-‘S、’ The Way.mp3', cover: '/assets/1/music/Ave Mujica-‘S、’ The Way.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'ふたつの月  ~Deep Into The Forest~', audio: '/assets/1/music/Ave Mujica-ふたつの月  ~Deep Into The Forest~.mp3', cover: '/assets/1/music/Ave Mujica-ふたつの月  ~Deep Into The Forest~.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '八芒星ダンス', audio: '/assets/1/music/Ave Mujica-八芒星ダンス.mp3', cover: '/assets/1/music/Ave Mujica-八芒星ダンス.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '堕天 (Cover)', audio: '/assets/1/music/Ave Mujica-堕天 (Cover).mp3', cover: '/assets/1/music/Ave Mujica-堕天 (Cover).jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '天球 (そら) のMúsica', audio: '/assets/1/music/Ave Mujica-天球 (そら) のMúsica.mp3', cover: '/assets/1/music/Ave Mujica-天球 (そら) のMúsica.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '暗黒天国 (Cover)', audio: '/assets/1/music/Ave Mujica-暗黒天国 (Cover).mp3', cover: '/assets/1/music/Ave Mujica-暗黒天国 (Cover).jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '神さま、バカ', audio: '/assets/1/music/Ave Mujica-神さま、バカ.mp3', cover: '/assets/1/music/Ave Mujica-神さま、バカ.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '素晴らしき世界 でも どこにもない場所', audio: '/assets/1/music/Ave Mujica-素晴らしき世界 でも どこにもない場所.mp3', cover: '/assets/1/music/Ave Mujica-素晴らしき世界 でも どこにもない場所.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '顔', audio: '/assets/1/music/Ave Mujica-顔.mp3', cover: '/assets/1/music/Ave Mujica-顔.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: '黒のバースデイ', audio: '/assets/1/music/Ave Mujica-黒のバースデイ.mp3', cover: '/assets/1/music/Ave Mujica-黒のバースデイ.jpg', artist: 'Ave Mujica', event: 'Ave Mujica' },
+{ title: 'Henceforth', audio: '/assets/1/music/MyGO!!!!!-Henceforth.mp3', cover: '/assets/1/music/MyGO!!!!!-Henceforth.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: 'swim (Cover)', audio: '/assets/1/music/MyGO!!!!!-swim (Cover).mp3', cover: '/assets/1/music/MyGO!!!!!-swim (Cover).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '「僕は...」 (I am…)', audio: '/assets/1/music/MyGO!!!!!-「僕は...」 (I am…).mp3', cover: '/assets/1/music/MyGO!!!!!-「僕は...」 (I am…).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: 'だれかの心臓になれたなら (Cover)', audio: '/assets/1/music/MyGO!!!!!-だれかの心臓になれたなら (Cover).mp3', cover: '/assets/1/music/MyGO!!!!!-だれかの心臓になれたなら (Cover).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: 'エガクミライ', audio: '/assets/1/music/MyGO!!!!!-エガクミライ.mp3', cover: '/assets/1/music/MyGO!!!!!-エガクミライ.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '処救生', audio: '/assets/1/music/MyGO!!!!!-処救生.mp3', cover: '/assets/1/music/MyGO!!!!!-処救生.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '名無声', audio: '/assets/1/music/MyGO!!!!!-名無声.mp3', cover: '/assets/1/music/MyGO!!!!!-名無声.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '君の神様になりたい。 (Cover)', audio: '/assets/1/music/MyGO!!!!!-君の神様になりたい。 (Cover).mp3', cover: '/assets/1/music/MyGO!!!!!-君の神様になりたい。 (Cover).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '回層浮', audio: '/assets/1/music/MyGO!!!!!-回層浮.mp3', cover: '/assets/1/music/MyGO!!!!!-回層浮.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '壱雫空 (instrumental)', audio: '/assets/1/music/MyGO!!!!!-壱雫空 (instrumental).mp3', cover: '/assets/1/music/MyGO!!!!!-壱雫空 (instrumental).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '壱雫空', audio: '/assets/1/music/MyGO!!!!!-壱雫空.mp3', cover: '/assets/1/music/MyGO!!!!!-壱雫空.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '孤壊牢', audio: '/assets/1/music/MyGO!!!!!-孤壊牢.mp3', cover: '/assets/1/music/MyGO!!!!!-孤壊牢.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '影色舞', audio: '/assets/1/music/MyGO!!!!!-影色舞.mp3', cover: '/assets/1/music/MyGO!!!!!-影色舞.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '往欄印', audio: '/assets/1/music/MyGO!!!!!-往欄印.mp3', cover: '/assets/1/music/MyGO!!!!!-往欄印.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '掌心正銘', audio: '/assets/1/music/MyGO!!!!!-掌心正銘.mp3', cover: '/assets/1/music/MyGO!!!!!-掌心正銘.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '明弦音', audio: '/assets/1/music/MyGO!!!!!-明弦音.mp3', cover: '/assets/1/music/MyGO!!!!!-明弦音.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '春日影 (MyGO!!!!! ver.)', audio: '/assets/1/music/MyGO!!!!!-春日影 (MyGO!!!!! ver.).mp3', cover: '/assets/1/music/MyGO!!!!!-春日影 (MyGO!!!!! ver.).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '春日影 (单曲丨TV Version)', audio: '/assets/1/music/MyGO!!!!!-春日影 (单曲丨TV Version).mp3', cover: '/assets/1/music/MyGO!!!!!-春日影 (单曲丨TV Version).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '栞 (instrumental)', audio: '/assets/1/music/MyGO!!!!!-栞 (instrumental).mp3', cover: '/assets/1/music/MyGO!!!!!-栞 (instrumental).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '栞', audio: '/assets/1/music/MyGO!!!!!-栞.mp3', cover: '/assets/1/music/MyGO!!!!!-栞.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '歌いましょう鳴らしましょう (一同歌唱一同奏响) (Single Version)', audio: '/assets/1/music/MyGO!!!!!-歌いましょう鳴らしましょう (一同歌唱一同奏响) (Single Version).mp3', cover: '/assets/1/music/MyGO!!!!!-歌いましょう鳴らしましょう (一同歌唱一同奏响) (Single Version).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '歌いましょう鳴らしましょう (试听版)', audio: '/assets/1/music/MyGO!!!!!-歌いましょう鳴らしましょう (试听版).mp3', cover: '/assets/1/music/MyGO!!!!!-歌いましょう鳴らしましょう (试听版).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '歌いましょう鳴らしましょう', audio: '/assets/1/music/MyGO!!!!!-歌いましょう鳴らしましょう.mp3', cover: '/assets/1/music/MyGO!!!!!-歌いましょう鳴らしましょう.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '歩拾道', audio: '/assets/1/music/MyGO!!!!!-歩拾道.mp3', cover: '/assets/1/music/MyGO!!!!!-歩拾道.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '残痕字 (TV Size)', audio: '/assets/1/music/MyGO!!!!!-残痕字 (TV Size).mp3', cover: '/assets/1/music/MyGO!!!!!-残痕字 (TV Size).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '残痕字', audio: '/assets/1/music/MyGO!!!!!-残痕字.mp3', cover: '/assets/1/music/MyGO!!!!!-残痕字.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '潜在表明', audio: '/assets/1/music/MyGO!!!!!-潜在表明.mp3', cover: '/assets/1/music/MyGO!!!!!-潜在表明.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '焚音打', audio: '/assets/1/music/MyGO!!!!!-焚音打.mp3', cover: '/assets/1/music/MyGO!!!!!-焚音打.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '無路矢', audio: '/assets/1/music/MyGO!!!!!-無路矢.mp3', cover: '/assets/1/music/MyGO!!!!!-無路矢.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '猛独が襲う (Cover)', audio: '/assets/1/music/MyGO!!!!!-猛独が襲う (Cover).mp3', cover: '/assets/1/music/MyGO!!!!!-猛独が襲う (Cover).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '猛独が襲う (Single Version)', audio: '/assets/1/music/MyGO!!!!!-猛独が襲う (Single Version).mp3', cover: '/assets/1/music/MyGO!!!!!-猛独が襲う (Single Version).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '砂寸奏', audio: '/assets/1/music/MyGO!!!!!-砂寸奏.mp3', cover: '/assets/1/music/MyGO!!!!!-砂寸奏.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '碧天伴走', audio: '/assets/1/music/MyGO!!!!!-碧天伴走.mp3', cover: '/assets/1/music/MyGO!!!!!-碧天伴走.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '端程山', audio: '/assets/1/music/MyGO!!!!!-端程山.mp3', cover: '/assets/1/music/MyGO!!!!!-端程山.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '聿日箋秋', audio: '/assets/1/music/MyGO!!!!!-聿日箋秋.mp3', cover: '/assets/1/music/MyGO!!!!!-聿日箋秋.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '詩超絆', audio: '/assets/1/music/MyGO!!!!!-詩超絆.mp3', cover: '/assets/1/music/MyGO!!!!!-詩超絆.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '輪符雨', audio: '/assets/1/music/MyGO!!!!!-輪符雨.mp3', cover: '/assets/1/music/MyGO!!!!!-輪符雨.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '迷星叫', audio: '/assets/1/music/MyGO!!!!!-迷星叫.mp3', cover: '/assets/1/music/MyGO!!!!!-迷星叫.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '迷跡波（Meisekiha）(专辑试听)', audio: '/assets/1/music/MyGO!!!!!-迷跡波（Meisekiha）(专辑试听).mp3', cover: '/assets/1/music/MyGO!!!!!-迷跡波（Meisekiha）(专辑试听).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '迷路日々', audio: '/assets/1/music/MyGO!!!!!-迷路日々.mp3', cover: '/assets/1/music/MyGO!!!!!-迷路日々.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '遥か彼方 (Cover)', audio: '/assets/1/music/MyGO!!!!!-遥か彼方 (Cover).mp3', cover: '/assets/1/music/MyGO!!!!!-遥か彼方 (Cover).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '雑踏、僕らの街 (Cover)', audio: '/assets/1/music/MyGO!!!!!-雑踏、僕らの街 (Cover).mp3', cover: '/assets/1/music/MyGO!!!!!-雑踏、僕らの街 (Cover).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '霧周途', audio: '/assets/1/music/MyGO!!!!!-霧周途.mp3', cover: '/assets/1/music/MyGO!!!!!-霧周途.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '静降想', audio: '/assets/1/music/MyGO!!!!!-静降想.mp3', cover: '/assets/1/music/MyGO!!!!!-静降想.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '音一会 (instrumental)', audio: '/assets/1/music/MyGO!!!!!-音一会 (instrumental).mp3', cover: '/assets/1/music/MyGO!!!!!-音一会 (instrumental).jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: '音一会', audio: '/assets/1/music/MyGO!!!!!-音一会.mp3', cover: '/assets/1/music/MyGO!!!!!-音一会.jpg', artist: 'MyGO!!!!!', event: 'MyGO!!!!!' },
+{ title: 'arrow', audio: '/assets/1/music/トゲナシトゲアリ-arrow.mp3', cover: '/assets/1/music/トゲナシトゲアリ-arrow.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: 'もう何もいらない未来', audio: '/assets/1/music/トゲナシトゲアリ-もう何もいらない未来.mp3', cover: '/assets/1/music/トゲナシトゲアリ-もう何もいらない未来.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: 'サヨナラサヨナラサヨナラ', audio: '/assets/1/music/トゲナシトゲアリ-サヨナラサヨナラサヨナラ.mp3', cover: '/assets/1/music/トゲナシトゲアリ-サヨナラサヨナラサヨナラ.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: 'ダレモ (Instrumental)', audio: '/assets/1/music/トゲナシトゲアリ-ダレモ (Instrumental).mp3', cover: '/assets/1/music/トゲナシトゲアリ-ダレモ (Instrumental).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: 'ダレモ', audio: '/assets/1/music/トゲナシトゲアリ-ダレモ.mp3', cover: '/assets/1/music/トゲナシトゲアリ-ダレモ.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '偽りの理', audio: '/assets/1/music/トゲナシトゲアリ-偽りの理.mp3', cover: '/assets/1/music/トゲナシトゲアリ-偽りの理.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '傷つき傷つけ痛くて辛い', audio: '/assets/1/music/トゲナシトゲアリ-傷つき傷つけ痛くて辛い.mp3', cover: '/assets/1/music/トゲナシトゲアリ-傷つき傷つけ痛くて辛い.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '名もなき何もかも', audio: '/assets/1/music/トゲナシトゲアリ-名もなき何もかも.mp3', cover: '/assets/1/music/トゲナシトゲアリ-名もなき何もかも.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '吹き消した灯火', audio: '/assets/1/music/トゲナシトゲアリ-吹き消した灯火.mp3', cover: '/assets/1/music/トゲナシトゲアリ-吹き消した灯火.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '命をくれよ', audio: '/assets/1/music/トゲナシトゲアリ-命をくれよ.mp3', cover: '/assets/1/music/トゲナシトゲアリ-命をくれよ.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '声なき魚 (新川崎丨仮)', audio: '/assets/1/music/トゲナシトゲアリ-声なき魚 (新川崎丨仮).mp3', cover: '/assets/1/music/トゲナシトゲアリ-声なき魚 (新川崎丨仮).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '心象的フラクタル (beni-shouga)', audio: '/assets/1/music/トゲナシトゲアリ-心象的フラクタル (beni-shouga).mp3', cover: '/assets/1/music/トゲナシトゲアリ-心象的フラクタル (beni-shouga).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '最期の禱り', audio: '/assets/1/music/トゲナシトゲアリ-最期の禱り.mp3', cover: '/assets/1/music/トゲナシトゲアリ-最期の禱り.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '極私的極彩色アンサー', audio: '/assets/1/music/トゲナシトゲアリ-極私的極彩色アンサー.mp3', cover: '/assets/1/music/トゲナシトゲアリ-極私的極彩色アンサー.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '気鬱、白濁す', audio: '/assets/1/music/トゲナシトゲアリ-気鬱、白濁す.mp3', cover: '/assets/1/music/トゲナシトゲアリ-気鬱、白濁す.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '渇く、憂う', audio: '/assets/1/music/トゲナシトゲアリ-渇く、憂う.mp3', cover: '/assets/1/music/トゲナシトゲアリ-渇く、憂う.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '無知のち私', audio: '/assets/1/music/トゲナシトゲアリ-無知のち私.mp3', cover: '/assets/1/music/トゲナシトゲアリ-無知のち私.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '爆ぜて咲く (Inst.)', audio: '/assets/1/music/トゲナシトゲアリ-爆ぜて咲く (Inst.).mp3', cover: '/assets/1/music/トゲナシトゲアリ-爆ぜて咲く (Inst.).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '爆ぜて咲く', audio: '/assets/1/music/トゲナシトゲアリ-爆ぜて咲く.mp3', cover: '/assets/1/music/トゲナシトゲアリ-爆ぜて咲く.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '理想的パラドクスとは', audio: '/assets/1/music/トゲナシトゲアリ-理想的パラドクスとは.mp3', cover: '/assets/1/music/トゲナシトゲアリ-理想的パラドクスとは.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '生きて生きてゆく', audio: '/assets/1/music/トゲナシトゲアリ-生きて生きてゆく.mp3', cover: '/assets/1/music/トゲナシトゲアリ-生きて生きてゆく.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '碧いif', audio: '/assets/1/music/トゲナシトゲアリ-碧いif.mp3', cover: '/assets/1/music/トゲナシトゲアリ-碧いif.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '空の箱 (井芹仁菜、河原木桃香)', audio: '/assets/1/music/トゲナシトゲアリ-空の箱 (井芹仁菜、河原木桃香).mp3', cover: '/assets/1/music/トゲナシトゲアリ-空の箱 (井芹仁菜、河原木桃香).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '空の箱(Vo.河原木桃香)', audio: '/assets/1/music/トゲナシトゲアリ-空の箱(Vo.河原木桃香).mp3', cover: '/assets/1/music/トゲナシトゲアリ-空の箱(Vo.河原木桃香).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '空白とカタルシス', audio: '/assets/1/music/トゲナシトゲアリ-空白とカタルシス.mp3', cover: '/assets/1/music/トゲナシトゲアリ-空白とカタルシス.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '空白与净化 (TV Version)', audio: '/assets/1/music/トゲナシトゲアリ-空白与净化 (TV Version).mp3', cover: '/assets/1/music/トゲナシトゲアリ-空白与净化 (TV Version).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '臆病な白夜', audio: '/assets/1/music/トゲナシトゲアリ-臆病な白夜.mp3', cover: '/assets/1/music/トゲナシトゲアリ-臆病な白夜.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '荊の薔薇', audio: '/assets/1/music/トゲナシトゲアリ-荊の薔薇.mp3', cover: '/assets/1/music/トゲナシトゲアリ-荊の薔薇.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '薄采ディスプレイ', audio: '/assets/1/music/トゲナシトゲアリ-薄采ディスプレイ.mp3', cover: '/assets/1/music/トゲナシトゲアリ-薄采ディスプレイ.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '蜃気楼ニ問フ', audio: '/assets/1/music/トゲナシトゲアリ-蜃気楼ニ問フ.mp3', cover: '/assets/1/music/トゲナシトゲアリ-蜃気楼ニ問フ.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '蝶に結いた赤い糸', audio: '/assets/1/music/トゲナシトゲアリ-蝶に結いた赤い糸.mp3', cover: '/assets/1/music/トゲナシトゲアリ-蝶に結いた赤い糸.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '視界の隅 朽ちる音 (新川崎丨仮)', audio: '/assets/1/music/トゲナシトゲアリ-視界の隅 朽ちる音 (新川崎丨仮).mp3', cover: '/assets/1/music/トゲナシトゲアリ-視界の隅 朽ちる音 (新川崎丨仮).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '誰にもなれない私だから (ED Long Intro ver.)', audio: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから (ED Long Intro ver.).mp3', cover: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから (ED Long Intro ver.).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '誰にもなれない私だから (ED)', audio: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから (ED).mp3', cover: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから (ED).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '誰にもなれない私だから', audio: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから.mp3', cover: '/assets/1/music/トゲナシトゲアリ-誰にもなれない私だから.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '運命に賭けたい論理', audio: '/assets/1/music/トゲナシトゲアリ-運命に賭けたい論理.mp3', cover: '/assets/1/music/トゲナシトゲアリ-運命に賭けたい論理.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '運命の華', audio: '/assets/1/music/トゲナシトゲアリ-運命の華.mp3', cover: '/assets/1/music/トゲナシトゲアリ-運命の華.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '闇に溶けてく', audio: '/assets/1/music/トゲナシトゲアリ-闇に溶けてく.mp3', cover: '/assets/1/music/トゲナシトゲアリ-闇に溶けてく.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '雑踏、僕らの街 (OP)', audio: '/assets/1/music/トゲナシトゲアリ-雑踏、僕らの街 (OP).mp3', cover: '/assets/1/music/トゲナシトゲアリ-雑踏、僕らの街 (OP).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '雑踏、僕らの街', audio: '/assets/1/music/トゲナシトゲアリ-雑踏、僕らの街.mp3', cover: '/assets/1/music/トゲナシトゲアリ-雑踏、僕らの街.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '飛べない蝶は夢を見る (Instrumental)', audio: '/assets/1/music/トゲナシトゲアリ-飛べない蝶は夢を見る (Instrumental).mp3', cover: '/assets/1/music/トゲナシトゲアリ-飛べない蝶は夢を見る (Instrumental).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '飛べない蝶は夢を見る', audio: '/assets/1/music/トゲナシトゲアリ-飛べない蝶は夢を見る.mp3', cover: '/assets/1/music/トゲナシトゲアリ-飛べない蝶は夢を見る.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '黎明を穿つ (Inst.)', audio: '/assets/1/music/トゲナシトゲアリ-黎明を穿つ (Inst.).mp3', cover: '/assets/1/music/トゲナシトゲアリ-黎明を穿つ (Inst.).jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: '黎明を穿つ', audio: '/assets/1/music/トゲナシトゲアリ-黎明を穿つ.mp3', cover: '/assets/1/music/トゲナシトゲアリ-黎明を穿つ.jpg', artist: 'トゲナシトゲアリ', event: 'GIRLS BAND CRY' },
+{ title: 'Distortion‼ (Inst.)', audio: '/assets/1/music/結束バンド-Distortion‼ (Inst.).mp3', cover: '/assets/1/music/結束バンド-Distortion‼ (Inst.).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'あのバンド (Inst.)', audio: '/assets/1/music/結束バンド-あのバンド (Inst.).mp3', cover: '/assets/1/music/結束バンド-あのバンド (Inst.).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'あのバンド (TV Version)', audio: '/assets/1/music/結束バンド-あのバンド (TV Version).mp3', cover: '/assets/1/music/結束バンド-あのバンド (TV Version).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'あのバンド -Anime Ver.-', audio: '/assets/1/music/結束バンド-あのバンド -Anime Ver.-.mp3', cover: '/assets/1/music/結束バンド-あのバンド -Anime Ver.-.jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'あのバンド -instrumental-', audio: '/assets/1/music/結束バンド-あのバンド -instrumental-.mp3', cover: '/assets/1/music/結束バンド-あのバンド -instrumental-.jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'なにが悪い (Inst.)', audio: '/assets/1/music/結束バンド-なにが悪い (Inst.).mp3', cover: '/assets/1/music/結束バンド-なにが悪い (Inst.).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'なにが悪い -instrumental-', audio: '/assets/1/music/結束バンド-なにが悪い -instrumental-.mp3', cover: '/assets/1/music/結束バンド-なにが悪い -instrumental-.jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'カラカラ (Inst.)', audio: '/assets/1/music/結束バンド-カラカラ (Inst.).mp3', cover: '/assets/1/music/結束バンド-カラカラ (Inst.).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'ギターと孤独と蒼い惑星 (2024 THE FIRST TAKE现场)', audio: '/assets/1/music/結束バンド-ギターと孤独と蒼い惑星 (2024 THE FIRST TAKE现场).mp3', cover: '/assets/1/music/結束バンド-ギターと孤独と蒼い惑星 (2024 THE FIRST TAKE现场).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: 'ギターと孤独と蒼い惑星 (Anime Ver.)', audio: '/assets/1/music/結束バンド-ギターと孤独と蒼い惑星 (Anime Ver.).mp3', cover: '/assets/1/music/結束バンド-ギターと孤独と蒼い惑星 (Anime Ver.).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: '忘れてやらない (Inst.)', audio: '/assets/1/music/結束バンド-忘れてやらない (Inst.).mp3', cover: '/assets/1/music/結束バンド-忘れてやらない (Inst.).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: '忘れてやらない', audio: '/assets/1/music/結束バンド-忘れてやらない.mp3', cover: '/assets/1/music/結束バンド-忘れてやらない.jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: '星座になれたら (Inst.)', audio: '/assets/1/music/結束バンド-星座になれたら (Inst.).mp3', cover: '/assets/1/music/結束バンド-星座になれたら (Inst.).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: '星座になれたら', audio: '/assets/1/music/結束バンド-星座になれたら.mp3', cover: '/assets/1/music/結束バンド-星座になれたら.jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: '結束バンド-翻转 (結束バンド remix)', audio: '/assets/1/music/結束バンド-結束バンド-翻转 (結束バンド remix).mp3', cover: '/assets/1/music/結束バンド-結束バンド-翻转 (結束バンド remix).jpg', artist: '結束バンド', event: '孤独摇滚' },
+{ title: '転がる岩、君に朝が降る (Inst.)', audio: '/assets/1/music/結束バンド-転がる岩、君に朝が降る (Inst.).mp3', cover: '/assets/1/music/結束バンド-転がる岩、君に朝が降る (Inst.).jpg', artist: '結束バンド', event: '孤独摇滚' }
 ]
 
 // 活动配置映射表
