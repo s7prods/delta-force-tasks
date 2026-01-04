@@ -287,11 +287,9 @@ onUnmounted(() => {
 }
 
 .event6-container h2 {
-    text-align: center;
+    color: #00d4aa;
     margin-bottom: 30px;
-    color: #ff6b6b;
-    font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 /* 视频播放器区域 */

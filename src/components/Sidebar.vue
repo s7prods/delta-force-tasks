@@ -1,5 +1,5 @@
 <template>
-    <div class="sidebar" @touchstart="handleTouchStart" @touchmove="handleTouchMove" @touchend="handleTouchEnd"
+    <div class="sidebar"
          @mousedown="handleMouseDown" @mousemove="handleMouseMove" @mouseup="handleMouseUp">
         <div v-for="activity in activities" :key="activity.id" class="sidebar-item"
             :class="{ active: activity.id === currentActivityId }" :style="{
@@ -143,18 +143,15 @@ const handleSidebarClick = (id) => {
 .sidebar {
     width: var(--sidebar-width);
     height: 100%;
-    overflow-y: auto;
+    overflow: auto;
     background: rgba(26, 26, 26, 0.6);
     backdrop-filter: blur(4px);
     border-right: 1px solid var(--line-thin);
     padding: 8px 0;
-    scrollbar-width: none;
-    touch-action: pan-y; /* 允许垂直滚动，但阻止水平滚动 */
     user-select: none; /* 防止文本选择 */
 }
 
 .sidebar::-webkit-scrollbar {
-    display: none;
 }
 
 .sidebar-item {

@@ -1,6 +1,7 @@
-const { app, BrowserWindow, screen } = require('electron')
+const { app, BrowserWindow, screen, ipcMain } = require('electron')
 const path = require('path')
 const fs = require('fs')
+const fsExtra = require('fs-extra')
 const http = require('http')
 const finalhandler = require('finalhandler')
 const serveStatic = require('serve-static')
@@ -131,6 +132,8 @@ function createWindow() {
     autoHideMenuBar: true,
     show: false, // 先隐藏，等加载完成再显示
     webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+      sandbox: false,
       autoplayPolicy: 'no-user-gesture-required'
     }
   })
@@ -231,5 +234,24 @@ app.on('window-all-closed', () => {
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow()
+  }
+})
+
+// IPC 处理器
+ipcMain.handle('copy-file', async (event, src, dest) => {
+  try {
+    await fsExtra.copy(src, dest)
+    return { success: true }
+  } catch (error) {
+    return { success: false, error: error.message }
+  }
+})
+
+ipcMain.handle('copy-folder', async (event, src, dest) => {
+  try {
+    await fsExtra.copy(src, dest)
+    return { success: true }
+  } catch (error) {
+    return { success: false, error: error.message }
   }
 })

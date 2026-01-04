@@ -57,6 +57,8 @@ const xlfImg = '/assets/1/xlf.jpg'
 
 const ui = useUI()
 
+const paths = window.electronAPI ? window.electronAPI.getPaths() : null
+
 // 奖励图片数据
 const rewardImages = ref([
     {
@@ -131,11 +133,41 @@ const onClaimBtnClick = (rewardId) => {
 }
 
 // 确认领取
-const confirmClaim = () => {
-    claimReward(pendingRewardId.value)
-    showClaimDialog.value = false
-    pendingRewardId.value = null
-    isConfirmed.value = true
+const confirmClaim = async () => {
+  // 先执行复制（仅在 Electron 环境中）
+  if (paths && selectedImage.value.alt === '神秘宝盒') {
+    const src = `${paths.materialDir}/州民族中学人员名单信息系统名单.xlsx`
+    const dest = `${paths.appRoot}/州民族中学人员名单信息系统名单.xlsx`
+    try {
+      const result = await window.electronAPI.copyFile(src, dest)
+      if (!result.success) {
+        ui.showTextPanel('文件复制失败: ' + result.error, 3000)
+        return // 不继续领取
+      }
+    } catch (error) {
+      ui.showTextPanel('复制出错: ' + error.message, 3000)
+      return
+    }
+  } else if (paths && selectedImage.value.alt === '稀有限定皮肤') {
+    const src = `${paths.materialDir}/ppt`
+    const dest = `${paths.appRoot}/ppt`
+    try {
+      const result = await window.electronAPI.copyFolder(src, dest)
+      if (!result.success) {
+        ui.showTextPanel('文件夹复制失败: ' + result.error, 3000)
+        return
+      }
+    } catch (error) {
+      ui.showTextPanel('复制出错: ' + error.message, 3000)
+      return
+    }
+  }
+
+  // 然后领取奖励
+  claimReward(pendingRewardId.value)
+  showClaimDialog.value = false
+  pendingRewardId.value = null
+  isConfirmed.value = true
 }
 
 // 初始化活动

@@ -1,6 +1,6 @@
 <template>
     <div class="event3-container">
-        <h2>特别活动 - 视频播放中心</h2>
+        <h2>孤独摇滚 - 视频播放中心</h2>
 
         <!-- 视频播放器 -->
         <div class="video-player-section">
